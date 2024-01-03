@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morse Code</title>
-    <script src="scripts/DOMvars.js" type="module"></script>
-    <!-- <script src="scripts/translator.js" type="module"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main-style.css">
+    <script type="module" src="./scripts/DOMvars.js" ></script>
 </head>
 <body>
-    <input type="text" id="englishInput" name="englishInput" placeholder="Enter English">
-    <input type="submit" id="submitEnglishInput" name="submitEnglishInput">
-    <h4 id="resultEnglish">Result: </h4>
-    <br>
-    <input type="text" id="morseInput" name="morseInput" placeholder="Enter Morse Code (separate letters with spaces)">
-    <input type="submit" id="submitMorseInput" name="submitMorseInput">
-    <h4 id="resultMorse">Result: </h4>
+    <div class="container">
+        <div class="nav-container">
+            <h1>Morselish</h1>
+        </div>
+        <div id="englishDiv" class="english-div lang-container">
+            <textarea type="text" id="englishInput" name="englishInput" placeholder="Enter English"></textarea>
+            <input type="submit" id="submitEnglishInput" name="submitEnglishInput">
+        </div>
+        
+        <div id="morseDiv" class="morse-div lang-container">
+            <textarea id="morseInput" name="morseInput" placeholder="Enter Morse Code (separate letters with spaces)"></textarea>
+            <input type="submit" id="submitMorseInput" name="submitMorseInput">
+        </div>
+    </div>
+
 </body>
 </html>

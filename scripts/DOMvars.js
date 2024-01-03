@@ -1,22 +1,29 @@
-import {englishStrToMorseStr, morseToEnglishStr} from "../scripts/translator.js";
+import {englishStrToMorseStr, morseToEnglishStr} from "./translator.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    const englishSubmit = document.getElementById("submitEnglishInput");
-    const morseSubmit = document.getElementById("submitMorseInput");
+    const englishInput = document.getElementById("englishInput");
+    const morseInput = document.getElementById("morseInput");
     //Get English Input and Translate
-    if (englishSubmit) {
-        englishSubmit.onclick = () => {
-            let englishInput = document.getElementById("englishInput").value;
-            const englishToUpper = englishInput.toUpperCase();
+    if (englishInput) {
+        
+        englishInput.onkeyup = () => {
+            const englishInputValue = englishInput.value;
+            console.log("element exists " + englishInputValue);
+            const englishToUpper = englishInputValue.toUpperCase();
             const englishResult = englishStrToMorseStr(englishToUpper);
-            document.getElementById("resultEnglish").innerHTML = "Result: " + englishResult;
+
+            console.log("Updating field to " + englishResult);
+            document.getElementById("morseInput").innerHTML = englishResult;
         };
     }
-    if (morseSubmit) {
-        morseSubmit.onclick = () => {
-            let morseInput = document.getElementById("morseInput").value;
-            const morseResult = morseToEnglishStr(morseInput);
-            document.getElementById("resultMorse").innerHTML = "Result: " + morseResult;
+    if (morseInput) {
+        morseInput.onkeyup = () => {
+            const morseInputValue = morseInput.value;
+            console.log("element exists " + morseInputValue);
+
+            const morseResult = morseToEnglishStr(morseInputValue);
+            console.log("Updating field to " + morseResult);
+            document.getElementById("englishInput").innerHTML = morseResult;
         }
     }
 
