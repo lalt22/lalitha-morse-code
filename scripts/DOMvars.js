@@ -13,7 +13,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
             const englishResult = englishStrToMorseStr(englishToUpper);
 
             console.log("Updating field to " + englishResult);
-            document.getElementById("morseInput").innerHTML = englishResult;
+            
+            //Use value NOT innerhtml: https://stackoverflow.com/questions/1927593/cant-update-textarea-with-javascript-after-writing-to-it-manually
+            document.getElementById("morseInput").value = englishResult;
         };
     }
     if (morseInput) {
@@ -23,7 +25,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             const morseResult = morseToEnglishStr(morseInputValue);
             console.log("Updating field to " + morseResult);
-            document.getElementById("englishInput").innerHTML = morseResult;
+
+            //Use value NOT innerhtml: https://stackoverflow.com/questions/1927593/cant-update-textarea-with-javascript-after-writing-to-it-manually
+            document.getElementById("englishInput").value = morseResult;
         }
     }
 
