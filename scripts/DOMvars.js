@@ -1,26 +1,4 @@
-//Takes an english string and converts to morse code;
-function englishStrToMorseStr(engStr) {
-    const letters = engStr.split("");
-    const morseStr = letters.map(letter => {
-        return alphaToMorse[letter];
-    });
-
-    return morseStr.join(" ");
-}
-
-//Take morse string (separated by space) and convert to english
-function morseToEnglishStr(morseStr) {
-    const letters = morseStr.split(" ");
-    const engStr = letters.map(letter => {
-        return findAlphaLetter(letter);
-    });
-
-    return engStr.join("");
-}
-
-function findAlphaLetter(morseLetter) {
-    return Object.keys(alphaToMorse).find(key => alphaToMorse[key] === morseLetter);
-}
+import {englishStrToMorseStr, morseToEnglishStr} from "./translator.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const englishSubmit = document.getElementById("submitEnglishInput");

@@ -57,3 +57,27 @@ const alphaToMorse = {
     "¿": "..-.-",
     "¡": "--...-"
  };
+
+ //Takes an english string and converts to morse code;
+export const englishStrToMorseStr = (engStr) =>{
+    const letters = engStr.split("");
+    const morseStr = letters.map(letter => {
+        return alphaToMorse[letter];
+    });
+
+    return morseStr.join(" ");
+}
+
+//Take morse string (separated by space) and convert to english
+export const morseToEnglishStr = (morseStr) => {
+    const letters = morseStr.split(" ");
+    const engStr = letters.map(letter => {
+        return findAlphaLetter(letter);
+    });
+
+    return engStr.join("");
+}
+
+function findAlphaLetter(morseLetter) {
+    return Object.keys(alphaToMorse).find(key => alphaToMorse[key] === morseLetter);
+}
