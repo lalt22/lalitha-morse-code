@@ -1,5 +1,10 @@
 body {
   font-family: "Inter", sans-serif;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -14,13 +19,31 @@ body {
 }
 
 .nav-container {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
   height: 70px;
-  outline: 2px solid gainsboro;
   align-self: flex-start;
+  width: 100%;
+  background-color: #f4eaf4;
+}
+.nav-container .title-container {
+  display: flex;
+  align-items: center;
   margin-left: 30px;
 }
-.nav-container h1 {
+.nav-container .title-container h2 {
   font-size: 35px;
+  font-weight: bolder;
+}
+.nav-container .info-container {
+  display: flex;
+  align-items: center;
+}
+.nav-container .info-container h5 {
+  font-size: 35px;
+  font-weight: lighter;
 }
 
 .lang-container {
@@ -38,4 +61,18 @@ textarea {
   background-color: #f4eaf4;
   border-radius: 10px;
   resize: none;
+}
+
+#clearButton {
+  width: 80%;
+  height: 40px;
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  border: none;
+  background: none;
+  background-color: #f4eaf4;
+  border-radius: 5px;
+}
+#clearButton:hover {
+  background-color: #aa9caa;
 }

@@ -3,6 +3,7 @@ import {englishStrToMorseStr, morseToEnglishStr} from "./translator.js";
 window.addEventListener("DOMContentLoaded", (event) => {
     const englishInput = document.getElementById("englishInput");
     const morseInput = document.getElementById("morseInput");
+    const clearButton = document.getElementById("clearButton");
     //Get English Input and Translate
     if (englishInput) {
         
@@ -15,7 +16,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             console.log("Updating field to " + englishResult);
             
             //Use value NOT innerhtml: https://stackoverflow.com/questions/1927593/cant-update-textarea-with-javascript-after-writing-to-it-manually
-            document.getElementById("morseInput").value = englishResult;
+            morseInput.value = englishResult;
         };
     }
     if (morseInput) {
@@ -27,7 +28,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
             console.log("Updating field to " + morseResult);
 
             //Use value NOT innerhtml: https://stackoverflow.com/questions/1927593/cant-update-textarea-with-javascript-after-writing-to-it-manually
-            document.getElementById("englishInput").value = morseResult;
+            englishInput.value = morseResult;
+        }
+    }
+    if (clearButton) {
+        clearButton.onclick = () => {
+            morseInput.value = "";
+            englishInput.value = "";
         }
     }
 
