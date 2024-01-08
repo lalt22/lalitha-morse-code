@@ -1,4 +1,4 @@
-import {englishStrToMorseStr, morseToEnglishStr} from "./translator.js";
+import {englishStrToMorseStr, morseToEnglishStr} from "../translator/translator.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const englishInput = document.getElementById("englishInput");
