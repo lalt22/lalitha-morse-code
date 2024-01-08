@@ -22,8 +22,10 @@ body {
     margin: 0;
     display: flex;
     justify-content: flex-start;
+    position: relative;
+    bottom: 20px;
     gap: 20px;
-    height: 70px;
+    height: fit-content;
     align-self: flex-start;
     width: 100%;
     background-color: #f4eaf4;
