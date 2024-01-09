@@ -60,12 +60,14 @@ const alphaToMorse = {
 
  //Takes an english string and converts to morse code;
 const englishStrToMorseStr = (engStr) =>{
-    const letters = engStr.split("");
+    const englishToUpper = engStr.toUpperCase();
+    const letters = englishToUpper.split("");
     const morseStr = letters.map(letter => {
         return alphaToMorse[letter];
     });
 
     return morseStr.join(" ");
+    
 }
 
 
