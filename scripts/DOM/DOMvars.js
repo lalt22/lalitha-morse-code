@@ -1,6 +1,12 @@
 import {englishStrToMorseStr, morseToEnglishStr} from "../translator/translator.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
+    function clearOnClick() {
+            morseInput.value = "";
+            englishInput.value = "";
+    }
+    
+    
     const englishInput = document.getElementById("englishInput");
     const morseInput = document.getElementById("morseInput");
     const clearButton = document.getElementById("clearButton");
@@ -29,10 +35,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     if (clearButton) {
         clearButton.onclick = () => {
-            morseInput.value = "";
-            englishInput.value = "";
+            clearOnClick();
         }
     }
+
+  
 
 })
 
